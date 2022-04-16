@@ -35,3 +35,19 @@ for(let lenguaje in lenguajes){
     document.write("<li>"+lenguajes[lenguaje]+"</li>");
 }
 document.write("</ul>");
+
+//Busquedas para corroborar si un elemento existe dentro de un array o no
+//var busqueda=lenguajes.find(function(lenguaje){
+//    return lenguaje="PHP";
+//})
+
+/*
+//Se utiliza findIndex para encontrar el indice donde se encuentra el elemento buscado
+*/
+var precios=[10, 20, 50, 80, 12];
+var busqueda=precios.some(precio=>precio<10);
+console.log(busqueda);
+
+
+
+
