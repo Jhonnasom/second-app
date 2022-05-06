@@ -15,5 +15,3 @@ function abrirVentana(url){
     window.open(url,"","with=100,height=150");
 }
 getBom();
-
-
