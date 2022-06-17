@@ -2,20 +2,58 @@
 
 //Fetch (ajax) y peticiones a servicios /api rest
 var div_usuarios=document.querySelector("#usuarios");
-var usuarios= [];
+var div_janet=document.querySelector("#janet");
 
-fetch('https://reqres.in/api/users')
-    .then(data => data.json()) //Esto convierte la url en un objeto JSON
-    .then(users => {
-        usuarios=users.data; //Ya tenemos en data todos esos datos recogidos y en la var usuario los guardamos
-        console.log(usuarios);
 
-        usuarios.map((user,i)=>{
-            let nombre=document.createElement('h3');
 
-            nombre.innerHTML=i+"."+user.first_name+" "+ user.last_name;
-            
-            div_usuarios.appendChild(nombre);
-            document.querySelector(".loading").style.display='none';
-        });
+    getUsuarios()
+    .then(data => data.json())               //Esto convierte la url en un objeto JSON
+    .then(users => {                         //Estas son las promesas
+                                            //Ya tenemos en data todos esos datos recogidos y en la var usuario los guardamos
+        listadoUsuarios(users.data)
+        return getJanet();
+
+    })
+    .then(data=>data.json())
+    .then(user=>{
+        mostrarJanet(user.data);
+
+
     });
+
+function getUsuarios(){
+    return fetch('https://reqres.in/api/users');
+}  
+
+function getJanet(){
+    return fetch('https://reqres.in/api/users/2');
+}
+
+function listadoUsuarios(usuarios){
+    usuarios.map((user,i)=>{
+        let nombre=document.createElement('h3');
+
+        nombre.innerHTML=i+"."+user.first_name+" "+ user.last_name;
+        
+        div_usuarios.appendChild(nombre);
+
+        document.querySelector(".loading").style.display='auto';
+    });
+}
+
+function mostrarJanet(user){
+        console.log(user);
+        let nombre=document.createElement('h4');
+        let avatar=document.createElement('img');
+
+        nombre.innerHTML=user.first_name+" "+ user.last_name;
+        avatar.src=user.avatar;
+        avatar.width='100px';
+  
+        
+        div_janet.appendChild(nombre);
+        div_janet.appendChild(avatar);
+
+        document.querySelector("#janet.loading").style.display='auto';
+
+}
