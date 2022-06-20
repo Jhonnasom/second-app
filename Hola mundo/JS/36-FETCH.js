@@ -29,6 +29,21 @@ function getJanet(){
     return fetch('https://reqres.in/api/users/2');
 }
 
+function getInfo(){
+    var profesor={
+        nombre:'Victor'
+        apellidos:'Robles'
+        url:'https://victorroblesweb.es'
+
+    };
+    return new Promise((resolve, reject)=>{
+                                            //New es una clase para instanciar un objeto
+       var profesor_string= JSON.stringify(profesor);//Convierte un objeto o valor de Javascript en una cadena de texto JSON.
+
+    }); 
+    
+}
+
 function listadoUsuarios(usuarios){
     usuarios.map((user,i)=>{
         let nombre=document.createElement('h3');
