@@ -2,6 +2,7 @@
 
 //Fetch (ajax) y peticiones a servicios /api rest
 var div_usuarios=document.querySelector("#usuarios");
+var div_profesor=document.querySelector("#profesor");
 var div_janet=document.querySelector("#janet");
 
 
@@ -11,15 +12,16 @@ var div_janet=document.querySelector("#janet");
     .then(users => {                         //Estas son las promesas
                                             //Ya tenemos en data todos esos datos recogidos y en la var usuario los guardamos
         listadoUsuarios(users.data)
+        return getInfo();
+    })
+    .then(data=>{
+        div_profesor.innerHTML=data;
         return getJanet();
-
     })
     .then(data=>data.json())
     .then(user=>{
         mostrarJanet(user.data);
-
-
-    });
+   });
 
 function getUsuarios(){
     return fetch('https://reqres.in/api/users');
@@ -31,15 +33,19 @@ function getJanet(){
 
 function getInfo(){
     var profesor={
-        nombre:'Victor'
-        apellidos:'Robles'
+        nombre:'Victor',
+        apellidos:'Robles',
         url:'https://victorroblesweb.es'
 
     };
     return new Promise((resolve, reject)=>{
-                                            //New es una clase para instanciar un objeto
-       var profesor_string= JSON.stringify(profesor);//Convierte un objeto o valor de Javascript en una cadena de texto JSON.
-
+        var profesor_string="";
+        setTimeout(function(){
+            profesor_string= JSON.stringify(profesor);
+            if(typeof profesor_string!='string'||profesor_string=='')return reject('error')
+            return resolve(profesor_string);
+        },3000);
+     
     }); 
     
 }
