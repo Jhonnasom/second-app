@@ -13,3 +13,5 @@ var textoHora=`
     La hora es:${hora}
 `;
 console.log(textoHora);
+//Math.Ceil es para quitar los decimales de los #
+console.log(Math.ceil(Math.random()*10000));
