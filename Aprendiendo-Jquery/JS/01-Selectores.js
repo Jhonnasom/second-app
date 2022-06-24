@@ -35,6 +35,17 @@ $(document).ready(function(){
         }
       
     });
+
+    //Selectores de atributo nos permiten seleccionar la etiqueta que tiene 
+    //ciertos atributos
+    $('[title="Google"]').css('background','#ccc');
+    $('[title="Facebook"]').css('background','blue');
+
+    //Otros
+    //$('p,a').addClass('margen_superior');
+
+    var busqueda= $("#elemento2").parent().parent().find('.resaltado');
+    console.log(busqueda);
 });
 
 
