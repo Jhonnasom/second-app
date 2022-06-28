@@ -33,4 +33,18 @@ $(document).ready(function(){
         $(this).css("background","pink")
                 .css("color","blue");
     });
+
+    //Focus y blur
+    //Se crea una variable para no acceder muchas veces al DOM
+    var nombre= $("#nombre");
+
+    nombre.focus(function(){
+        $(this).css("border","2px solid green");
+    });
+
+    nombre.blur(function(){
+        $(this).css("border","1px solid gray");
+
+        $("#datos").text($(this).val()).show();
+    });
 });
