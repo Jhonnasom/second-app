@@ -37,6 +37,7 @@ $(document).ready(function(){
     //Focus y blur
     //Se crea una variable para no acceder muchas veces al DOM
     var nombre= $("#nombre");
+    var datos= $("#datos");
 
     nombre.focus(function(){
         $(this).css("border","2px solid green");
@@ -45,6 +46,27 @@ $(document).ready(function(){
     nombre.blur(function(){
         $(this).css("border","1px solid gray");
 
-        $("#datos").text($(this).val()).show();
+        datos.text($(this).val()).show();
     });
+
+    //Mousedown y mouseup
+    datos.mousedown(function(){
+        $(this).css("border-color","gray");
+    });
+
+    datos.mouseup(function(){
+        $(this).css("border-color","pink");
+    });
+
+    // Mousemove
+    $(document).mousemove(function(){
+        $('body').css("cursor","none");
+        var sigueme=$("#sigueme");
+       // console.log("En X"+ event.clientX);
+        //console.log("En Y"+ event.clientY);
+        sigueme.css("left",event.clientX);
+        sigueme.css("top",event.clientY);
+
+    });
+
 });
