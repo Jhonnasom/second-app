@@ -21,12 +21,30 @@ $(document).ready(function(){
             web:$('input[name="web"]').val()
         };
 
-        console.log(usuario);
-    
+        
+        /*
         $.post($(this).attr("action"),usuario,function(response){
             console.log(response);
         }).done(function(){
             alert("Usuario añadido correctamente");
+        });
+
+        */
+
+        $.ajax({
+            type:'POST',
+            url:$(this).attr("action"),
+            data: usuario,
+            beforeSend:function(){
+                console.log("Enviando usuario...");
+            },
+            success:function(response){
+                console.log(response);
+            },
+            error:function(){
+                console.log("Ha ocurrido un error...");
+            },
+            timeout:2000
         });
 
         return false;
