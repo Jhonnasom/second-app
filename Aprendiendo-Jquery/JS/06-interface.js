@@ -29,4 +29,18 @@ $(document).ready(function(){
         $(".caja-efectos").toggle("shake",4000);
     });
 
+    //.Tooltip
+    $(document).tooltip();
+
+    //Cuadros de dialogo
+    $("#lanzar-popup").click(function(){
+        $("#popup").dialog();
+    })
+    
+    //Calendario
+    $("#calendario").datepicker();
+
+    //Tabs
+    $("#pestanas").tabs();
+
 });
