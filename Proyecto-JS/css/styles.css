@@ -143,3 +143,40 @@ body{
     font-size: 15px;
     text-align: justify;
 }
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"]{
+    padding:5px;
+    border-radius: 1px;
+    border:1px solid #ccc;
+    width: 80%;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+form input[type="submit"]{
+    background:#eee;
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: #333;
+    cursor: pointer;
+}
+
+footer{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(252, 241, 241);
+    height: 50px;
+    background: rgba(51,51,51,0.70);
+    margin: 0px auto;
+    width: 66%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 50px;
+    line-height: 47px;
+}
+
+.bx-wrapper,.bx-viewport{
+    height: 250px !important;
+    
+}
