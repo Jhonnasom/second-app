@@ -67,13 +67,23 @@ $(document).ready(function(){
         theme.attr("href","css/green.css");
       });
 
-      var theme=$("#theme");
       $("#to-blue").click(function(){
         theme.attr("href","css/blue.css");
       });
 
-      var theme=$("#theme");
       $("#to-red").click(function(){
         theme.attr("href","css/red.css");
+      });
+
+
+      //Scroll arriba de la web
+      $('.subir').click(function(e){
+          e.preventDefault();
+
+        $('html,body').animate({
+            scrollTop:0
+        },500);
+
+        return false;
       });
     });
