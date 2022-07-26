@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+   //Acordeon
+   if(window.location.href.indexOf('about') >-1){
+    $("#acordeon").accordion();
+  }
+
       //Slider
       if(window.location.href.indexOf('index')>-1){
           $('.galeria').bxSlider({
@@ -52,7 +57,7 @@ $(document).ready(function(){
       };
      
 
-      posts.forEach((item,index)=>{
+     /*posts.forEach((item,index)=>{
         var post=`
         <article class="post">
                         <h2>${item.title}</h2>
@@ -64,7 +69,7 @@ $(document).ready(function(){
                     </article>
                     `;
         $("#posts").append(post);
-      });
+      });*/
       
       //Selector de temas
       var theme=$("#theme");
@@ -115,9 +120,18 @@ $(document).ready(function(){
         });
       }
 
-      //Acordeon
-      if(window.location.href.indexOf('about')>-1){
-        $("#acordeon").accordion();
+      /*//Acordeon
+      if(window.location.href.indexOf('about') >-1){
+      $("#acordeon").accordion();
+      }*/
+
+      //Reloj
+      if(window.location.href.indexOf('reloj')>-1){
+        setInterval(function(){
+          var reloj=moment().format("hh:mm:ss a");
+          $('#reloj').html(reloj);
+        }, 1000);
+      
       }
       
     });
