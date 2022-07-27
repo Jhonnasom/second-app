@@ -133,5 +133,12 @@ $(document).ready(function(){
         }, 1000);
       
       }
+      //Validation
+      if(window.location.href.indexOf('contact')>-1){
+        $("form input[name='date']").datepicker();
+        $.validate({
+            lang:'es'
+          });
+        }
       
     });

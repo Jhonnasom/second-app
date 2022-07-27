@@ -136,7 +136,9 @@ h2{
 
 form input[type="text"],
 form input[type="password"],
-form input[type="email"]{
+form input[type="email"],
+form input[type="number"],
+select{
     padding:5px;
     border-radius: 1px;
     border:1px solid #ccc;
@@ -231,4 +233,27 @@ footer{
     width: 50%;
     padding: 30px;
     margin: 0px auto;
+}
+
+#form_contact{
+    width: 50%;
+    margin-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+#form_contact label{
+    display: block;
+   width: 100%;
+   margin-top: 5px;
+}
+
+.form-error{
+        font-size: 11px;
+        background: red;
+        float: left;
+        color: white;
+        padding: 10px;
+        width: 65%;
+    }
 }
