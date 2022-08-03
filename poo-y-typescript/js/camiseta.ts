@@ -1,5 +1,11 @@
+//Interface
+interface CamisetaBase{
+    setColor(color);
+    getColor();
+}
+
 //Clase (molde del objeto)
-class Camiseta{
+ class Camiseta implements CamisetaBase{
 
     //Propiedades (caracteristicas del objeto)
     private color:string;
@@ -26,11 +32,26 @@ class Camiseta{
     }
 }
 
-//Instanciar nuevas clases de los 
-var camiseta=new Camiseta("rojo","manga larga","nike","L",14);
-camiseta.setColor("Rojo");
+// Clase hija
+class Sudadera extends Camiseta{
+    public capucha:boolean;
 
+    setCapucha(capucha:boolean){
+        this.capucha=capucha;
+    }
+    getCapucha():boolean{
+        return this.capucha;
+    }
+}
+
+var camiseta=new Camiseta("gfss","fds","ewwfg","fdsa",13);
 console.log(camiseta);
+
+var sudadera_nike=new Sudadera("Rojo","manga larga","nike","M",14);
+sudadera_nike.setCapucha(true);
+sudadera_nike.setColor("Gris");
+
+console.log(sudadera_nike);
 
 
 
