@@ -1,2 +1,2 @@
-console.log("Hola mundo con Typescript");
-alert("Hola mundo con TS Victor Robles hola");
+console.log("Hola Mundo con TypeScript");
+alert("Hola Mundo con TS con Víctor Robles Web");
