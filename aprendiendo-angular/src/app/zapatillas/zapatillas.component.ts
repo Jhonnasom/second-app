@@ -13,10 +13,10 @@ export class ZapatillasComponent implements OnInit {
     public color:string;
     
     constructor(){
-        this.color
+        this.color='blue';
         this.marcas=new Array();
         this.zapatillas=[
-            new Zapatilla('Reebook Classic','Rebook','Blanco',80,true),
+            new Zapatilla('Reebook Classic','Rebook','Rojas',80,true),
             new Zapatilla('Nike Runner','Nike','Negras',60,true),
             new Zapatilla('Adidas DC','Adidas','Gris',180,true),
             new Zapatilla('Reebok Spartan','Adidas','Gris',180,false)
