@@ -1,7 +1,17 @@
 <h2>{{titulo}}</h2>
+
+<p>Anadir marca</p>
+<p>
+<input type="text" [(ngModel)]="mi_marca"/>
+<button (click)="getMarca()">Mostrar marca</button>
+<button (click)="addMarca()">Anadir marca</button>
+
+</p>
+<strong>{{mi_marca>}}</strong>
+
 <p>Compra las zapatillas de las mejores marcas</p>
         <ul>
-                <li *ngFor="let marca of marcas;let indice=index">{{indice+' '+marca}}</li>
+                <li *ngFor="let marca of marcas;let indice=index">{{indice +' - '+ marca}}</li>
         </ul>
 
         <p>Las deportivas que tenemos disponibles son las siguientes:</p>
