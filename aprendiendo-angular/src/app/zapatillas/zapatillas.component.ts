@@ -14,7 +14,7 @@ export class ZapatillasComponent implements OnInit {
     public mi_marca:string;
     
     constructor(){
-        this.mi_marca="Fila";
+        this.mi_marca= "Fila" ;
         this.color='blue';
         this.marcas=new Array();
         this.zapatillas=[
