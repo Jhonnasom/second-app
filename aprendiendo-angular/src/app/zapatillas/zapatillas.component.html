@@ -2,16 +2,22 @@
 
 <p>Anadir marca</p>
 <p>
-<input type="text" [(ngModel)]="mi_marca"/>
+<input type="text" [(ngModel)]="mi_marca"(keyup.enter)="mostrarPalabra()"/>
 <button (click)="getMarca()">Mostrar marca</button>
 <button (click)="addMarca()">Anadir marca</button>
+
+
+
 
 </p>
 <strong>{{mi_marca}}</strong>
 
 <p>Compra las zapatillas de las mejores marcas</p>
         <ul>
-                <li *ngFor="let marca of marcas;let indice=index">{{indice +' - '+ marca}}</li>
+                <li *ngFor="let marca of marcas;let indice=index">
+                        {{indice +' - '+ marca}}
+                        <button (click)="borrarMarca(indice)">Borrar</button>
+                </li>
         </ul>
 
         <p>Las deportivas que tenemos disponibles son las siguientes:</p>
@@ -23,7 +29,11 @@
                 <span [ngStyle]="{
                         'text-decoration':!deportiva.stock ?'line-through':'none'
                 }">
-                        {{deportiva.nombre}} - <strong>{{deportiva.precio}}$</strong></span>
+                        {{deportiva.nombre}} - 
+                        <strong [class.altoPrecio]="deportiva.precio>=80">
+                                {{deportiva.precio}}$
+                        </strong>
+                </span>
                 
                 <span *ngIf="deportiva.precio<80"
                         [style.background]="deportiva.precio<80 ? 'green' :'transparent'"
