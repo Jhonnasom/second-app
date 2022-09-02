@@ -7,16 +7,22 @@ import { Router, ActivatedRoute,Params } from '@angular/router';
   styleUrls: ['./cursos.component.css']
 })
 export class CursosComponent implements OnInit {
+  public nombre:string;
+  public followers:number;
 
   constructor(
-    private_route:ActivatedRoute,
-    private_router:Router
+    private _route:ActivatedRoute,
+    private _router:Router,
+  
   ) {}
 
   ngOnInit() {
     this._route.params.subscribe((params:Params)=>{
-      console.log(params);
+      this.nombre= params.nombre;
+      this.followers=+params.followers;
+      //this.nombre= params['nombre'];
+      //console.log(this.nombre);
+
     });
   }
-
 }
