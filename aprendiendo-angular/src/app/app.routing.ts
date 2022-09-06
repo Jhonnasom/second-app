@@ -18,6 +18,7 @@ const appRoutes:Routes=[
     {path:'cursos',component:CursosComponent},
     {path:'cursos/:nombre/:followers',component:CursosComponent},
     {path:'**',component:HomeComponent}
+    
 ];
 
 //Exportar el modulo del router
