@@ -1,19 +1,22 @@
-import { Pipe,PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform } from '@angular/core';
+
 @Pipe({
-    name:'calculadora'
+	name: 'calculadora'
 })
 export class CalculadoraPipe implements PipeTransform{
 
-        //DATO | Calculadora: otroDato
-        //param1              param2
-        transform(value:any, value_two:any) {
-            let operaciones=`
-                Suma:${value+value_two} <br/>
-                Resta:${value-value_two}<br/>
-                Multiplicacion:${value*value_two}<br/>
-                Division:${value/value_two}<br/>
-            `;
+	// dato | calculadora: otroDato
+	// param1              param2
 
-            return operaciones;
-        }
+	transform(value: any, value_two: any){
+		let operaciones = `
+			Suma: ${value+value_two} -
+			Resta: ${value-value_two} -
+			Multiplicación: ${value*value_two} -
+			División: ${value/value_two} 
+		`;
+
+		return operaciones;
+
+	}
 }
