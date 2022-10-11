@@ -56,7 +56,15 @@ var controller={
                 project
             });
         });
-    }
+    },
+    getProjects:function(req,res){
+        Project.find({}).sort('+year').exec((err,projects)=>{
+            if(err)return res.status.send({message:'Error al devolver los datos.'});
+            if(!projects)return res.status(404).send({message:'No hay proyectos para mostrar'});
+        
+            return res.status(200).send({projects});
+        });
+    },
 };
 
 module.exports=controller;
