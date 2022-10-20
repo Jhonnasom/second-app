@@ -1,6 +1,6 @@
-export var Configuracion={
-    color:"red",
-    fondo:"#eee",
-    titulo:"Master en Javascript y Angular",
-    descripcion:"Aprendiendo Angular con Victor Robles-v"
+export var Configuracion = {
+	color: "red",
+	fondo: "#eee",
+	titulo: "Master en JavaScript y Angular",
+	descripcion: "Aprendiendo Angular con Víctor Robles - victorroblesweb"
 };
